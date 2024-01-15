@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="{{ '/' }}">
+        <button>Back</button>
+    </a>
+    <a href="{{ '/add_item' }}">
+        <button>Add item</button>
+    </a>
+    <h1>All Items</h1>
+    <form method="get" action="{{ url_for('all_items') }}">
+        <label for="search">Search:</label>
+        <input type="text" id="search" name="search" placeholder="Enter item name">
+        <button type="submit" >Search</button>
+    </form>
+
+    <ul>
+        {% for item in items %}
+            <li>{{ item.name }} - Quantity: {{ item.quantity_in_metres }}, Status: {% if item.status %}In Cupboard{% else %}On the Table{% endif %}</li>
+            <button onclick="toggleEditMode('{{ item.id }}')">Edit</button>
+        {% endfor %}
+
+    </ul>
+<script src="{{ url_for('static', filename='index.js') }}"></script>
+
+</body>
+</html>

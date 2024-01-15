@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell Page</title>
+</head>
+<body>
+    <h1>Cell Page</h1>
+    <p>Row: {{ row }}, Column: {{ col }}</p>
+    <ul>
+        {% for item in result %}
+            <li>{{ item.name }} - Quantity: {{ item.quantity_in_metres }}, Status: {% if item.status %}In Cupboard{% else %}On the Table{% endif %}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
