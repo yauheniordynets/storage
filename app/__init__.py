@@ -9,7 +9,7 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
     Vue(app)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:12345678@localhost/store'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://iamjalgp:3LKSsKUu2in0JRB00flj5RsR0etCw2Ks@snuffleupagus.db.elephantsql.com/iamjalgp'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
 
